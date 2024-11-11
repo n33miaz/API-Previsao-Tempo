@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .weather {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f7f7f7;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Previsão do Tempo</h1>
+    <form method="POST">
+        <input type="text" name="cidade" placeholder="Digite a cidade" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if weather %}
+        {% if weather.message %}
+            <p>{{ weather.message }}</p>
+        {% else %}
+        <div class="weather">
+            <h2>{{ weather.name }}, {{ weather.sys.country }}</h2>
+            <p>Temperatura: {{ weather.main.temp }}°C</p>
+            <p>Clima: {{ weather.weather[0].description }}</p>
+            <p>Umidade: {{ weather.main.humidity }}%</p>
+        </div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
