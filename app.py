@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import requests
 import os
 
-app = Flask(__name__, template_folder='pagina')
+app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 API_Key = "3320d5d40928654963b2d8615e3b95e4"
@@ -19,5 +19,6 @@ def home():
         else:
             weather_data = {'message': 'Cidade não encontrada'}
     return render_template('index.html', weather=weather_data)
+
 if __name__ == "__main__":
     app.run(debug=True)
