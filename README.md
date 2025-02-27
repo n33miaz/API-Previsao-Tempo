@@ -1,6 +1,6 @@
 # API Previsao Tempo
  openweathermap.org
-# Previsão do Tempo com Flask e Python
+# Previsão do Tempo com JavaScript
 
 Este projeto é uma aplicação web simples que consulta a previsão do tempo para uma cidade especificada pelo usuário, utilizando a API do OpenWeatherMap. A interface é construída com **Flask** e **HTML**, e o projeto é desenvolvido em **Python**.
 
